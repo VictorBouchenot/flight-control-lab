@@ -53,7 +53,7 @@ The FCS does **not** receive or filter the pilot model's stick. This is a contro
 
 These numbers describe this teaching model and this scenario only. The landing score is the project's internal scorecard, not an independent validation, and the comparison demonstrates how the assistance layer behaves - it is not evidence of real-aircraft fidelity.
 
-![Pilot assistance comparison](artifacts/assistance-compare.png)
+![Pilot assistance comparison](artifacts/assistance-compare.svg)
 
 The bottom-left panel compares commands from separate runs, not an input/output transfer through the FCS. The delayed pilot model oscillates and saturates; the automatic controller gives a smoother response in this scenario. The alpha limiter targets 13 deg but is not a hard bound: dynamics and rate-limited actuators allow overshoot (14.2 deg peak here).
 
@@ -77,7 +77,7 @@ The same controller comparison on a 120-degree heading capture: automatic FCS gu
 | Settle time (s) | 51.2 | never settled |
 | Outcome | clean capture | departure (rolled inverted) |
 
-![Pilot assistance comparison, heading capture](artifacts/assistance-maneuver.png)
+![Pilot assistance comparison, heading capture](artifacts/assistance-maneuver.svg)
 
 The orange trace is a shadow pilot's hypothetical command evaluated on the FCS trajectory. It is recorded only and never applied or passed into the FCS. The blue trace is the actual FCS aileron surface. The bank target is capped at 45 deg, with a 47.1 deg observed peak; this is not a hard attitude bound. Altitude error still reaches 114 m, so the automatic controller has visible room for improvement.
 
@@ -143,13 +143,10 @@ The plain scenario names use the full 6-DOF model. The point-mass baseline remai
 and heaves under the aircraft, the four arresting wires lie on the deck, and a
 wireframe glyph shows the aircraft's attitude along the final 700 metres.
 
-![3D carrier approach](artifacts/carrier-3d-preview.png)
 
-![3D carrier approach in rough seas](artifacts/carrier-3d-rough-seas.png)
 
-The animated version follows the aircraft down to touchdown:
+Run the preview scripts above to generate local PNG and GIF views. Binary previews are not included in this source-only release.
 
-![Animated 3D approach](artifacts/carrier-approach-3d.gif)
 
 ## Cobra demonstration
 
@@ -157,9 +154,7 @@ The animated version follows the aircraft down to touchdown:
 angle of attack on the post-stall teaching model, then the standard flight
 control system - with its angle-of-attack protection - flies the recovery.
 
-![Cobra 3D preview](artifacts/cobra-3d-preview.png)
 
-![Animated cobra](artifacts/cobra-3d.gif)
 
 ## Repository layout
 
